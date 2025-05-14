@@ -16,7 +16,7 @@
   background-size: cover;
   min-inline-size: 320px;
   min-block-size: 100dvb;
-  font-variation-settings: "wght" var(--card-text-font-weight) 'wdth' 100;
+  font-variation-settings: "wght" var(--card-text-font-weight) "wdth" 100;
 }
 
 header,
@@ -77,6 +77,10 @@ main {
   background-color: #fff;
 }
 
+.btn:hover {
+  cursor: pointer;
+}
+
 .btn:focus,
 .btn:focus-visible {
   box-shadow: 2px 2px 0 0 var(--accent-color);
@@ -116,9 +120,9 @@ main {
 
 .card__image {
   display: block;
-  background-blend-mode: hard-light;
   width: 100%;
   height: auto;
+  background-blend-mode: hard-light;
 }
 
 .card__label {
@@ -173,6 +177,7 @@ main {
 .card__icon-button:hover {
   --heart-core-color: var(--accent-color);
   --heart-body-color: var(--accent-color);
+  cursor: pointer;
 }
 
 .card__icon-button:active {
@@ -424,8 +429,8 @@ footer {
   .card__icon-button:not(:hover) .core {
     transition-delay: 0.05s;
   }
-  
-  .like-icon:not(.is-liked) .contour { 
+
+  .like-icon:not(.is-liked) .contour {
     transition: fill 0.1s linear;
   }
 
