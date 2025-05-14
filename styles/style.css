@@ -16,7 +16,7 @@
   background-size: cover;
   min-inline-size: 320px;
   min-block-size: 100dvb;
-  font-variation-settings: "wdth" var(--card-text-font-weight);
+  font-variation-settings: "wght" var(--card-text-font-weight) 'wdth' 100;
 }
 
 header,
