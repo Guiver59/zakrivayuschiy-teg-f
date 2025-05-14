@@ -19,7 +19,6 @@
   --button-save-height: 80px;
   --button-dialog-width: clamp(257px, 244.3239px + 3.3803vw, 293px);;
   --button-dialog-height: 38px;
-
   --border-width: 2px;
   --background-img: repeating-linear-gradient(to right,#d3d3d3 2px, transparent 4px),
                     repeating-linear-gradient(to bottom, #d3d3d3 2px, transparent 4px),

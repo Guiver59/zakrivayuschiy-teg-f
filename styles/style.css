@@ -117,6 +117,8 @@ main {
 .card__image {
   display: block;
   background-blend-mode: hard-light;
+  width: 100%;
+  height: auto;
 }
 
 .card__label {
