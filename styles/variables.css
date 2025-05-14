@@ -1,1 +1,27 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
+:root {
+  --main-font: 'Inter';
+  --accent-font: 'PressStart2P';
+  --card-header-font-weight: 700;
+  --card-text-font-weight: 400;
+  --accent-color: #000;
+  --heart-contur-color: #000;
+  --heart-blood-color: red;
+  --heart-body-color: #fff;
+  --heart-core-color: #fff;
+  --header-margin: clamp(7.5rem, 7.3239rem + 0.7512vw, 8rem);
+  --width-content: clamp(375px, 260.5634px + 30.5164vw, 700px);
+  --footer-top-gap:52px;
+  --card-like-button-height: 38px;
+  --button-like-width: 130px;
+  --button-like-height: 38px;
+  --button-save-width: 306px;
+  --button-save-height: 80px;
+  --button-dialog-width: clamp(257px, 244.3239px + 3.3803vw, 293px);;
+  --button-dialog-height: 38px;
+
+  --border-width: 2px;
+  --background-img: repeating-linear-gradient(to right,#d3d3d3 2px, transparent 4px),
+                    repeating-linear-gradient(to bottom, #d3d3d3 2px, transparent 4px),
+                    linear-gradient(#e7e7e7 , #1a1a1a );
+}
