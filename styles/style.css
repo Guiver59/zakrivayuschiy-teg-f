@@ -162,7 +162,6 @@ main {
 .card__icon-button:focus {
   box-shadow: none;
   outline: none;
-  outline: none;
 }
 
 .card__icon-button:focus-visible {
@@ -425,14 +424,14 @@ footer {
   .card__icon-button:not(:hover) .core {
     transition-delay: 0.05s;
   }
+  
+  .like-icon:not(.is-liked) .contour {    
+    transition: fill 0.1s linear;
+  }
 
   .contour {
     transition: fill 0.3s ease;
     transition-delay: 0.06s;
-  }
-  
-  .like-icon:not(.is-liked) .contour {    
-    transition: fill 0.1s linear;
   }
 
   .like-icon {
