@@ -425,7 +425,7 @@ footer {
     transition-delay: 0.05s;
   }
   
-  .like-icon:not(.is-liked) .contour {    
+  .like-icon:not(.is-liked) .contour { 
     transition: fill 0.1s linear;
   }
 
