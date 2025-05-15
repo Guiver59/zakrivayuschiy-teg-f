@@ -9,3 +9,87 @@
 ✦ button__text — для обозначения текстового элемента внутри кнопки
 
 */
+
+@media (prefers-reduced-motion: no-preference) {
+  .btn:focus,
+  .btn:focus-visible {
+    transition: box-shadow 0.3s ease;
+  }
+
+  .card__icon-button:focus-visible {
+    transition: border 0.3s ease;
+  }
+
+  .button__text:hover::before {
+    transition: transform 0.5s ease-in-out;
+    transform-origin: center left;
+  }
+  .button__text:not(:hover)::before {
+    transition: transform 0.5s ease-in-out;
+    transform: scaleX(0);
+    transform-origin: center left;
+  }
+
+  .core,
+  .main-body {
+    transition: fill 0.3s ease;
+  }
+
+  .card__icon-button:hover .main-body {
+    transition-delay: 0.05s;
+  }
+
+  .card__icon-button:hover .core {
+    transition-delay: 0;
+  }
+
+  .card__icon-button:not(:hover) .main-body {
+    transition-delay: 0;
+  }
+
+  .card__icon-button:not(:hover) .core {
+    transition-delay: 0.05s;
+  }
+
+  .like-icon:not(.is-liked) .contour {
+    transition: fill 0.1s linear;
+  }
+
+  .contour {
+    transition: fill 0.3s ease;
+    transition-delay: 0.06s;
+  }
+
+  .like-icon {
+    transition: transform 0.3s ease-in-out;
+    transition-delay: 0.1s;
+  }
+
+  .card__icon-button:has(.is-liked) .like-icon {
+    animation: like-action 0.3s ease-in 0.1s; /* forwards, можно отыграть анимацию назад, так приятнее =)
+               like-action 0.3s linear reverse forwards 0.4s;*/
+  }
+
+  .card__icon-button:has(.is-liked) .sparks {
+    animation: sparking 0.3s ease-in 0.3s; /*forwards, 
+               sparking 0.3s linear reverse forwards 0.3s; */
+  }
+}
+
+@keyframes like-action {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.25);
+  }
+}
+
+@keyframes sparking {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

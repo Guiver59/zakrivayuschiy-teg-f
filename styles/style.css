@@ -10,18 +10,22 @@
 
 */
 
+dialog {
+  padding: 0;
+}
+
 .page {
   font-family: var(--main-font), sans-serif;
   background-image: var(--background-img);
   background-size: cover;
+  background-attachment: fixed;
   min-inline-size: 320px;
   min-block-size: 100dvb;
-  font-variation-settings: "wght" var(--card-text-font-weight) "wdth" 100;
+  font-variation-settings: "wght" var(--card-text-font-weight), "wdth" 100;
 }
 
 header,
-main,
-footer {
+main {
   justify-self: center;
 }
 
@@ -34,7 +38,7 @@ main {
 .header {
   display: grid;
   width: var(--width-content); /*100%;*/
-  font-family: var(--accent-font), sans-serif;
+  font-family: var(--accent-font), fantasy;
 }
 
 .title__header {
@@ -95,11 +99,14 @@ main {
 }
 
 .card__title {
-  width: 100%;
+  /*width: 100%;*/
   border-bottom: solid var(--border-width) #000;
-  padding: 6px 10px 4px 10px;
-  font-weight: 700;
+  padding: 5px 10px 5px 10px;
+  font-weight: bold;
   font-size: 18px;
+  /*font-weight: 700;
+  font-size: 18px;*/
+  font-variation-settings: "wght" 700, "wdth" 5;
 }
 
 .card__text__section {
@@ -109,11 +116,14 @@ main {
 }
 
 .card__text {
+  font-weight: normal;
   font-size: 18px;
-  letter-spacing: 0.045rem;
+  font-variation-settings: "wght" 400;
+  /*letter-spacing: 0.045rem;*/
 }
 
 .card__image__section {
+  position: relative;
   display: grid;
   border-bottom: solid var(--border-width) #000;
 }
@@ -129,16 +139,16 @@ main {
   position: absolute;
   z-index: 1;
   justify-self: end;
-  margin-top: 25px;
-  margin-right: 13px;
   opacity: 50%;
-  font-family: var(--accent-font), sans-serif;
+  font-family: var(--accent-font), fantasy;
 
   font-weight: normal;
 
   font-size: 14px;
   text-shadow: -1px -1px 0px #fff, -1px 1px 0px #fff, 1px -1px 0px #fff,
     1px 1px 0px #fff;
+  inset-block-start: 25px;
+  inset-inline-end: 13px;
   mix-blend-mode: hard-light;
 }
 
@@ -202,10 +212,10 @@ svg .sparks {
   opacity: 0;
 }
 
-footer {
-  margin-top: var(--footer-top-gap);
+/*footer {
+  margin-top: var(--save-btn-top-gap);
   padding-bottom: 100px;
-}
+}*/
 
 .button__text {
   position: relative;
@@ -215,7 +225,7 @@ footer {
   align-items: center;
   height: 100%;
   color: #fff;
-  font-family: var(--accent-font), sans-serif;
+  font-family: var(--accent-font), fantasy;
   font-size: 14px;
   mix-blend-mode: difference;
 }
@@ -224,29 +234,34 @@ footer {
   content: "";
   position: absolute;
   z-index: 0;
-  justify-self: start;
-  align-self: start;
-  width: calc(var(--button-like-width) - 4px);
-  height: calc(var(--button-like-height) - 4px);
+  /*width: calc(var(--button-like-width) - 4px);
+  height: calc(var(--button-like-height) - 4px);*/
+  width: 100%;
+  height: 100%;
   background-color: #fff;
   transform: scaleX(0);
+  /*justify-self: start;
+  align-self: start;*/
+  inset-block-start: 0;
+  inset-inline-start: 0;
   mix-blend-mode: difference;
 }
 
 .save__button {
   width: var(--button-save-width);
   height: var(--button-save-height);
+  margin-bottom: 100px;
 }
 
-.save__button .button__text::before {
+/*.save__button .button__text::before {
   width: calc(var(--button-save-width) - 4px);
   height: calc(var(--button-save-height) - 4px);
-}
+}*/
 
 .button__dialog .button__text::before {
   align-self: start;
-  width: calc(var(--button-dialog-width) - 4px);
-  height: calc(var(--button-dialog-height) - 4px);
+  /*width: calc(var(--button-dialog-width) - 4px);
+  height: calc(var(--button-dialog-height) - 4px);*/
 }
 
 .button__text:hover::before {
@@ -258,7 +273,6 @@ footer {
 }
 
 .isert-disk {
-  position: fixed;
   border-width: 2px;
 }
 
@@ -277,12 +291,14 @@ footer {
   justify-items: center;
   align-items: center;
   gap: 20px;
+  padding: 30px var(--dialog-horizontal-padding);
+  /*padding: ;*/
 }
 
 .dialog__title {
   max-width: 200px;
   margin-bottom: 0;
-  font-family: var(--accent-font), sans-serif;
+  font-family: var(--accent-font), fantasy;
   font-size: 14px;
   line-height: 150%;
   text-transform: uppercase;
@@ -293,13 +309,14 @@ footer {
   grid-column-start: 1;
   grid-column-end: 3;
   width: 100%;
-  min-height: 38px;
+  /*min-height: 38px;*/
 }
 
 .button__dialog {
   display: inline;
   width: var(--button-dialog-width);
   height: var(--button-dialog-height);
+  text-transform: uppercase;
 }
 
 .filter__sepia {
@@ -347,15 +364,17 @@ footer {
 */
 
 @supports ((text-stroke: 1px #fff) or (-webkit-text-stroke: 1px #fff)) {
-  card__label {
+  .card__label {
     text-shadow: none;
-    -webkit-text-stroke: 1px #000000;
+    -webkit-text-stroke: 1px #fff;
+    text-stroke: 1px #fff;
   }
 }
 
 @media (width > 375px) {
   :root {
-    --footer-top-gap: 50px;
+    /*--save-btn-top-gap: 50px;*/
+    --dialog-horizontal-padding: 30px;
   }
 
   .main__title {
@@ -386,89 +405,10 @@ footer {
   }
 
   .card__label {
-    margin-right: 25px;
+    inset-inline-end: 25px;
   }
 
   main {
     gap: 52px;
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .btn:focus,
-  .btn:focus-visible {
-    transition: box-shadow 0.3s ease;
-  }
-
-  .card__icon-button:focus-visible {
-    transition: border 0.3s ease;
-  }
-
-  .button__text:hover::before {
-    transition: transform 0.5s ease-in-out;
-    transform-origin: center left;
-  }
-
-  .core,
-  .main-body {
-    transition: fill 0.3s ease;
-  }
-
-  .card__icon-button:hover .main-body {
-    transition-delay: 0.05s;
-  }
-
-  .card__icon-button:hover .core {
-    transition-delay: 0;
-  }
-
-  .card__icon-button:not(:hover) .main-body {
-    transition-delay: 0;
-  }
-
-  .card__icon-button:not(:hover) .core {
-    transition-delay: 0.05s;
-  }
-
-  .like-icon:not(.is-liked) .contour {
-    transition: fill 0.1s linear;
-  }
-
-  .contour {
-    transition: fill 0.3s ease;
-    transition-delay: 0.06s;
-  }
-
-  .like-icon {
-    transition: transform 0.3s ease-in-out;
-    transition-delay: 0.1s;
-  }
-
-  .card__icon-button:has(.is-liked) .like-icon {
-    animation: like-action 0.3s ease-in 0.1s; /* forwards, можно отыграть анимацию назад, так приятнее =)
-               like-action 0.3s linear reverse forwards 0.4s;*/
-  }
-
-  .card__icon-button:has(.is-liked) .sparks {
-    animation: sparking 0.3s ease-in 0.3s; /*forwards, 
-               sparking 0.3s linear reverse forwards 0.3s; */
-  }
-}
-
-@keyframes like-action {
-  from {
-    transform: scale(1);
-  }
-  to {
-    transform: scale(1.25);
-  }
-}
-
-@keyframes sparking {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
   }
 }
