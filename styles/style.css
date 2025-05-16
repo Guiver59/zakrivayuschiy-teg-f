@@ -99,8 +99,8 @@ main {
 }
 
 .card__title {
-  /*width: 100%;*/
-  border-bottom: solid var(--border-width) #000;
+  /*width: 100%;
+  border-bottom: solid var(--border-width) #000;*/
   padding: 5px 10px 5px 10px;
   font-weight: bold;
   font-size: 18px;
@@ -118,8 +118,9 @@ main {
 .card__text {
   font-weight: normal;
   font-size: 18px;
-  font-variation-settings: "wght" 400;
-  /*letter-spacing: 0.045rem;*/
+  line-height: 21px;
+  /*font-variation-settings: "wght" 400;
+  letter-spacing: 0.045rem;*/
 }
 
 .card__image__section {
@@ -219,9 +220,10 @@ svg .sparks {
 
 .button__text {
   position: relative;
-  display: grid;
-  grid-auto-flow: row;
-  justify-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  justify-content: center;
   align-items: center;
   height: 100%;
   color: #fff;
@@ -251,6 +253,7 @@ svg .sparks {
   width: var(--button-save-width);
   height: var(--button-save-height);
   margin-bottom: 100px;
+  line-height: 90%;
 }
 
 /*.save__button .button__text::before {
@@ -286,13 +289,23 @@ svg .sparks {
 
 .isert-disk:open {
   display: grid;
-  grid-template-columns: min-content 1fr;
+  /*grid-template-columns: min-content 1fr;*/
   grid-template-rows: min-content min-content;
   justify-items: center;
   align-items: center;
-  gap: 20px;
+  gap: 30px;
   padding: 30px var(--dialog-horizontal-padding);
   /*padding: ;*/
+}
+
+.dialog__msg {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  flex-direction: row;
+  gap: 20px;
+  /*не понимаю почему снизу у окна несоответсвие с макетом. все отступы вроде перепроверил. возможно граница такой эфект дает*/
 }
 
 .dialog__title {
@@ -306,8 +319,8 @@ svg .sparks {
 
 .form__dialog {
   display: grid;
-  grid-column-start: 1;
-  grid-column-end: 3;
+  /*grid-column-start: 1;
+  grid-column-end: 3;*/
   width: 100%;
   /*min-height: 38px;*/
 }
@@ -396,8 +409,22 @@ svg .sparks {
   }
 
   .button__text {
-    grid-auto-flow: column;
+    /*grid-auto-flow: column;*/
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    line-height: 90%;
   }
+
+  /*.save__button .btn__png {
+    align-self: end;
+  }
+
+   .save__button .button__text {
+    align-self: end;
+  }*/
 
   .btn__png {
     width: 21px;
