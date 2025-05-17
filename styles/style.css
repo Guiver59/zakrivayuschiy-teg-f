@@ -384,7 +384,7 @@ svg .sparks {
   }
 }
 
-@media (width > 375px) {
+@media (width >= 376px) {
   :root {
     /*--save-btn-top-gap: 50px;*/
     --dialog-horizontal-padding: 30px;
